@@ -17,12 +17,20 @@
         "@tailwindcss/typography": "^0.3.0",
         "@vue/compiler-sfc": "^3.0.5",
         "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
+        "laravel-mix": "^6.0.49",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "postcss-import": "^12.0.1",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.43.3",
+        "sass-loader": "^12.2.0",
         "tailwindcss": "^2.0.1",
         "vue": "^3.0.5",
         "vue-loader": "^16.1.2"
+    },
+    "dependencies": {
+        "bootstrap-icons": "^1.6.1",
+        "laravel-vue-pagination": "^3.0.0",
+        "vue-sweetalert2": "^5.0.2"
     }
 }

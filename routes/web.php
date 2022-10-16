@@ -4,6 +4,7 @@ use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,12 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $users = User::all();
-    return Inertia::render('Dashboard',['users'=>$users]);
-})->name('dashboard');
+/** modules links */
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [UserController::class,'userTeams'])->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/users', [UserController::class,'users'])->name('dashboard.users');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/teams', [UserController::class,'teams'])->name('dashboard.teams');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/get-all-users', [UserController::class,'getUsers'])->name('getUsers');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/extensions', function () {
     return Inertia::render('Extensions/Index');
@@ -36,6 +39,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/extensions', fu
 
 Route::get('/language/{language}', function ($language) {
     Session()->put('locale', $language);
- 
+    Session()->forget('modules');
     return redirect()->back();
 })->name('language');
+
+Route::get('/proba', function(Illuminate\Http\Request $request){
+
+ $pepe = $request->user()->getAuthIdentifier();
+
+    return [\Illuminate\Support\Facades\Auth::user(), $pepe];
+})->middleware('auth');

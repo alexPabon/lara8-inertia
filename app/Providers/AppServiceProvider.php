@@ -2,8 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Module;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
 use Illuminate\Support\ServiceProvider;
+use MongoDB\Driver\Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,11 +32,14 @@ class AppServiceProvider extends ServiceProvider
             'locale' => function () {
                 return app()->getLocale();
             },
-            'language' => function () {                
+            'language' => function () {
                 return translations(
-                    resource_path('lang/'. app()->getLocale() .'.json')
+                    resource_path('lang/' . app()->getLocale() . '.json')
                 );
-            },
+            },            
         ]);
+
+        Paginator::useTailwind();
+
     }
 }

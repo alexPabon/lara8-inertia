@@ -1,0 +1,241 @@
+body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.loader-container {
+  position: relative;
+  max-width: 40px;
+  max-height: 40px;
+  margin: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-container .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: solid 0.23vw transparent;
+  border-top-color: #35f506;
+  border-left-color: #35f506;
+  border-radius: 50%;
+  animation: loader 1.4s linear infinite;
+}
+
+.loader-container .loader2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: solid 0.23vw transparent;
+  border-top-color: #35f506;
+  border-left-color: #35f506;
+  border-radius: 50%;
+  animation: loader 0.7s linear infinite;
+}
+
+.center_x {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.center_y {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.center_xy {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translateY(-50%) translateX(-50%) !important;
+}
+
+@keyframes loader {
+  0% {
+    transform: translate(-93%, -93%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-93%, -93%) rotate(360deg);
+  }
+}
+@keyframes loader2 {
+  0% {
+    transform: translate(-93%, -93%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-93%, -93%) rotate(-360deg);
+  }
+}
+/* ************************************************************ */
+.border_b_3 {
+  border-bottom-width: 3px;
+}
+
+.bg_green {
+  background-color: #087736 !important;
+}
+
+.bg_blue {
+  background-color: #3490dc !important;
+}
+
+.bg_indigo {
+  background-color: #6574cd !important;
+}
+
+.bg_purple {
+  background-color: #9561e2 !important;
+}
+
+.bg_pink {
+  background-color: #f66d9b !important;
+}
+
+.bg_red {
+  background-color: #e3342f !important;
+}
+
+.bg_orange {
+  background-color: #f6993f !important;
+}
+
+.bg_yellow {
+  background-color: #ffed4a !important;
+}
+
+.bg_teal {
+  background-color: #4dc0b5 !important;
+}
+
+.bg_cyan {
+  background-color: #6cb2eb !important;
+}
+
+.text_green {
+  color: #087736 !important;
+}
+
+.text_blue {
+  color: #3490dc !important;
+}
+
+.text_indigo {
+  color: #6574cd !important;
+}
+
+.text_purple {
+  color: #9561e2 !important;
+}
+
+.text_pink {
+  color: #f66d9b !important;
+}
+
+.text_red {
+  color: #e3342f !important;
+}
+
+.text_orange {
+  color: #f6993f !important;
+}
+
+.text_yellow {
+  color: #ffed4a !important;
+}
+
+.text_teal {
+  color: #4dc0b5 !important;
+}
+
+.text_cyan {
+  color: #6cb2eb !important;
+}
+
+/************************ customize input type=ratio **************************************/
+/* Customize the label (the container) */
+.containerCheck {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.containerCheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark_custo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #e6e6e8;
+  border-radius: 50%;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.6), 0px 1px 0px rgba(255, 255, 255, 0.3);
+}
+
+/* On mouse-over, add a grey background color */
+.containerCheck:hover input ~ .checkmark_custo {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerCheck input:checked ~ .checkmark_custo {
+  background-color: #0075ff;
+  box-shadow: inset 0px -3px 1px rgba(0, 0, 0, 0.38), 0px 1px 0px rgba(255, 255, 255, 0.3);
+}
+
+/* When the checkbox is checked, add a green background */
+.containerCheck input:checked ~ .checkmark_green {
+  background-color: #29a46a !important;
+}
+
+/* Create the checkmark_custo/indicator (hidden when not checked) */
+.checkmark_custo:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark_custo when checked */
+.containerCheck input:checked ~ .checkmark_custo:after {
+  display: block;
+}
+
+/* Style the checkmark_custo/indicator */
+.containerCheck .checkmark_custo:after {
+  left: 8px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.alert_success {
+  box-shadow: 0px 0px 4px 5px #d3f9e8, 0px 1px 0px rgba(255, 255, 255, 0.3) !important;
+}
+
+.alert_danger {
+  box-shadow: 0px 0px 4px 3px #f60431, 0px 1px 0px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ************************************** end customize ratio **********************************************/

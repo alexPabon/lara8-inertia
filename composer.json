@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "doctrine/dbal": "^3.3",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.4.3",
@@ -60,7 +61,7 @@
             "chmod -R 775 storage/",
             "chown -R www-data:www-data bootstrap/cache/",
             "chmod -R 775 bootstrap/cache/",
-            "php artisan migrate"                    
+            "php artisan migrate"
         ]
     },
     "extra": {

@@ -19,6 +19,8 @@ class Team extends JetstreamTeam
      */
     protected $casts = [
         'personal_team' => 'boolean',
+        'modules_permit' => 'array',
+        'sub_modules_permit' => 'array',
     ];
 
     /**
@@ -29,6 +31,7 @@ class Team extends JetstreamTeam
     protected $fillable = [
         'name',
         'personal_team',
+        'modules_permit'
     ];
 
     /**
